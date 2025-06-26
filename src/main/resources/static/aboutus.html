@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+  if (!localStorage.getItem("user")) {
+    window.location.href = "signin.html";
+  }
+</script>
+
+    <link rel="stylesheet" href="aboutus.css">
+</head>
+<body>    
+   <nav class="desktop-nav" >
+        <div class="logo">Wheels On Rent</div>
+        <div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+        </div>
+        <p id="welcomeUser" style="margin-right: 10px; color: white; font-weight: bold;"></p>
+<button class="btn" onclick="logout()">Logout</button>
+
+    </nav>
+    <!--about-us-section-->
+    <section class="aboutus-section" id="About us">
+        <div class="about-us-container">
+            <h1 class="title-ab">About us</h1>
+            <p class="about-us-p">
+At Wheels On Rent, we make mobility easy<br> affordable, and accessible. Whether you're planning<br> a road trip, commuting within the city, or simply need<br> a ride for the day, we provide a wide range <br>of well-maintained cars and bikes for rent to suit every need <br>and budget.
+            </p>
+            <p class="p2">
+                 Welcome to Wheels On Rent — your ride, your rules.
+            </p>
+            <p class="p3"> Wheels<br>on<br>Rent</p>
+            </div>
+            <div class="details-container">
+                <p class="detail-paragraph">© 2025 Wheels On Rent. All rights reserved.<br>
+Quality Cars and Bikes for Your Every Journey.</p>
+            </div>
+    </section>
+    <script src="scripts.js">
+    </script>
+    <script>
+  function logout() {
+    localStorage.removeItem("user");
+    window.location.href = "signin.html";
+  }
+
+  // Optional: Show welcome message
+  const user = localStorage.getItem("user");
+  if (user) {
+    document.getElementById("welcomeUser").textContent = "Welcome, " + user;
+  }
+</script>
+
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheel On Rent</title>
+
+  <!-- 🔐 Redirect to signin if not logged in -->
+  <script>
+    if (!localStorage.getItem("user")) {
+      window.location.href = "signin.html";
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+<body>
+  <!-- 🔝 Navbar -->
+  <nav class="desktop-nav">
+    <div class="logo">Wheels On Rent</div>
+    <div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#About us">About us</a></li>
+      </ul>
+    </div>
+    <div class="button">
+      <p id="welcomeUser" style="margin-right: 10px; color: white; font-weight: bold;"></p>
+      <button class="btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <!-- 🔍 Search + Bikes -->
+  <section class="bikes-section" id="bikesSection">
+    <div class="input-container">
+      <input class="input" type="text" id="search" placeholder="search here....">
+    </div>
+    <h1 class="title-bike">Bikes</h1>
+    <div class="bikes-container">
+      <!-- 🛵 List of Bikes -->
+      <div class="card-bikes"><img src="images/bike1.jpg"><h3 class="bike-name">suzuki</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike2.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike3.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike4.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike5.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike6.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike7.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+      <div class="card-bikes"><img src="images/bike8.jpg"><h3 class="bike-name">Hero</h3><p class="bike-price">₹800/day</p><button class="book-btn-bike">Book now</button></div>
+    </div>
+  </section>
+
+  <!-- 🚗 Cars -->
+  <section class="cars-section" id="carsSection">
+    <h1 class="title-car">Cars</h1>
+    <div class="cars-container">
+      <!-- 🚗 List of Cars -->
+      <div class="card-cars"><img src="images/car1.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car2.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car3.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car4.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car5.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car6.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car7.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+      <div class="card-cars"><img src="images/car8.jpg"><h3 class="car-name">TATA</h3><p class="car-price">₹4000/day</p><button class="book-btn-car">Book now</button></div>
+    </div>
+  </section>
+
+  <!-- 📞 Contact -->
+  <section class="contact-section" id="Contact">
+    <div class="contact-container">
+      <h1 class="con-title">Contact</h1>
+      <form class="contact-form" id="contactForm" action="#" method="POST">
+        <input class="in-text" type="text" name="name" placeholder="Your Name" required><br>
+        <input class="in-email" type="email" name="email" placeholder="Your Email" required><br>
+        <textarea class="in-message" name="message" rows="5" placeholder="Your Message" required></textarea><br>
+        <button class="in-button" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ℹ️ About Us -->
+  <section class="aboutus-section" id="About us">
+    <div class="about-us-container">
+      <h1 class="title-ab">About us</h1>
+      <p class="about-us-p">
+        At Wheels On Rent, we make mobility easy, affordable, and accessible. Whether you're planning a road trip, commuting within the city, or simply need a ride for the day, we provide a wide range of well-maintained cars and bikes for rent to suit every need and budget.
+      </p>
+      <p class="p2">Welcome to Wheels On Rent — your ride, your rules.</p>
+      <p class="p3">Wheels<br>on<br>Rent</p>
+    </div>
+    <div class="details-container">
+      <p class="detail-paragraph">© 2025 Wheels On Rent. All rights reserved.<br>Quality Cars and Bikes for Your Every Journey.</p>
+    </div>
+  </section>
+
+  <!-- 🚀 Scripts -->
+  <script src="scripts.js"></script>
+  <script>
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "signin.html";
+    }
+
+    // Display welcome message
+    const user = localStorage.getItem("user");
+    if (user) {
+      document.getElementById("welcomeUser").textContent = "Welcome, " + user;
+    }
+  </script>
+</body>
+
+</html>

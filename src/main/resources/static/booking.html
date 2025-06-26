@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Page</title>
+  <script>
+  if (!localStorage.getItem("user")) {
+    window.location.href = "signin.html";
+  }
+</script>
+
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <nav class="desktop-nav" >
+        <div class="logo">Wheels On Rent</div>
+        <div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+        </div>
+        <p id="welcomeUser" style="margin-right: 10px; color: white; font-weight: bold;"></p>
+<button class="btn" onclick="logout()">Logout</button>
+
+    </nav>
+  <div class="container">
+    <h2>Book Your Ride</h2>
+    <img id="vehiclePreview" src="" alt="Selected Vehicle" />
+
+    <form id="bookingForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required />
+
+      <label for="vehicle">Select Vehicle</label>
+      <select id="vehicle" required>
+        <option value="">--Choose--</option>
+        <option value="Bike">Bike</option>
+        <option value="Car">Car</option>
+      </select>
+
+      <label for="model">Model</label>
+      <input type="text" id="model" required />
+
+      <label for="date">Booking Date</label>
+      <input type="date" id="date" required />
+
+      <label for="duration">Duration (in days)</label>
+      <input type="number" id="duration" required />
+
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">--Select Payment--</option>
+        <option value="UPI">UPI</option>
+        <option value="Card">Credit/Debit Card</option>
+        <option value="Cash">Cash on Delivery</option>
+      </select>
+
+      <button class="book-btn" type="submit">Confirm Booking</button>
+    </form>
+  </div>
+  <div class="details-container">
+                <p class="detail-paragraph">© 2025 Wheels On Rent. All rights reserved.<br>
+Quality Cars and Bikes for Your Every Journey.</p>
+            </div>
+  <script src="booking.js"></script>
+  <script>
+  function logout() {
+    localStorage.removeItem("user");
+    window.location.href = "signin.html";
+  }
+
+  // Optional: Show welcome message
+  const user = localStorage.getItem("user");
+  if (user) {
+    document.getElementById("welcomeUser").textContent = "Welcome, " + user;
+  }
+</script>
+
+</body>
+</html>

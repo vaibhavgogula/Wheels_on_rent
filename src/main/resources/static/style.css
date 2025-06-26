@@ -1,0 +1,483 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: "poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+p {
+    color: black;
+}
+#contact{
+     scroll-margin-top: 100px
+}
+/*nav*/
+nav.desktop-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+nav,
+.nav-links{
+    display: flex;
+}
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+    
+}
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+a{
+    color:black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+a:hover{
+    color:gray;
+    text-decoration: overline;
+    text-decoration-color:rgb(red, green, blue) ;
+}
+.logo{
+    font-size: 4rem;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+    color:black;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+/* sign in button*/
+.btn {
+ width: 4.5em;
+ height: 2.3em;
+ margin: 0.5em;
+ background: black;
+ color: white;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+}
+
+button:hover {
+ color: black;
+}
+
+button:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+/*section*/
+/* .home-input{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+} */
+/*input*/
+.bikes-section{
+    width: 100%;
+    height: auto;
+   display: flex; 
+   flex-direction: column;
+   gap: 10px;
+   overflow: hidden;
+    margin-top: 17vh;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.input{
+    width: 80%;
+    padding: 1em;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+}
+.input:hover {
+    transform: scale(1.1);
+}
+
+/*title*/
+.title-bike{
+    font-size: 3rem;
+    font-weight: 200;
+    color:black;
+    justify-content: space-around;
+    margin-left:5vw;
+    transition: transform 0.4s ease;
+}
+.title-bike:hover{
+    transform: scale(1.1);
+    /* text-decoration: underline; */
+}
+.img{
+    width: 50%;
+}
+/* bikes-container adjustments */
+.bikes-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 40px;
+    justify-content: space-around;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden;
+    transition: margin-top 0.3s ease;
+}
+
+.card-bikes {
+    min-width: 30%; /* Fixed width for cards */
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 400px;
+    transition: transform 0.4s ease;
+}
+.card-bikes:hover{
+    transform: scale(1.1);
+}
+
+.card-bikes img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.bike-name{
+    margin: 10px 0 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 2vw;
+}
+.bike-price{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: green;
+    text-align: left;
+    margin-left: 2vw;
+}
+.book-btn-bike {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.book-btn-bike:hover {
+    background-color: black;
+}
+.cars-section{
+    width: 100%;
+    height: auto;
+   display: flex; 
+   flex-direction: column;
+   gap: 10px;
+   overflow: hidden;
+}
+.title-car{
+    font-size: 3rem;
+    font-weight: 200;
+    color:black;
+    justify-content: space-around;
+    margin-left:5vw;
+    transition: transform 0.4s ease;
+}
+.title-car:hover{
+    transform: scale(1.1);
+    /* text-decoration: underline; */
+}
+.cars-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden;
+    gap: 40px;
+}
+.card-cars {
+    min-width: 30%; /* Fixed width for cards */
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 400px;
+    transition: transform 0.4s ease;
+}
+.card-cars:hover{
+    transform: scale(1.1);
+}
+.card-cars img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.car-name{
+    margin: 10px 0 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 2vw;
+}
+.car-price{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: green;
+    text-align: left;
+    margin-left: 2vw;
+}
+/*cars-button*/
+.book-btn-car{
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color:black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.book-btn-car:hover {
+    background-color: black;
+}
+/*contact form*/
+.contact-section{
+    position: relative; 
+    width: 100%;
+    height: auto;
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    justify-content: space-around;
+    align-items: center;
+    scroll-margin-top: 100px;
+}
+.contact-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+.con-title{
+   font-size: 3rem;
+    font-weight: 200;
+    color:black;
+    justify-content: center;
+    text-align: left;
+    margin-left: 5vw;
+    transition: transform 0.4s ease;
+    margin-top: 20px;  
+}
+.con-title:hover{
+    transform: scale(1.1);
+}
+.contact-form{
+    position: relative;
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+.in-text{
+    width: 60%;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+    margin-left: 5vw;
+    margin-top: 50px;
+}
+.in-text:hover{
+    transform: scale(1.1);
+}
+.in-email{
+    width: 60%;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+    margin-left: 5vw;
+}
+.in-email:hover{
+    transform: scale(1.1);
+}
+.in-message{
+    width: 60%;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+    margin-left: 5vw;
+}
+.in-message:hover{
+    transform: scale(1.1);
+}
+.in-button{
+    width: 40%;
+    padding: 1rem;
+    background-color: black;
+    border: none;
+    border-radius: 0.625em;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+    margin-left: 5vw;
+    justify-content: space-around;
+    align-items: center;
+}
+.in-button:hover{
+    transform: scale(1.1);
+}
+/*about us*/
+.aboutus-section {
+    position: relative; 
+    width: 100%;
+    height: auto;
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+.about-us-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+}
+.title-ab{
+    font-size: 3rem;
+    font-weight: 200;
+    color:black;
+    justify-content: center;
+    text-align: left;
+    margin-left: 5vw;
+    transition: transform 0.4s ease; 
+}
+.title-ab:hover{
+    transform: scale(1.1);
+}
+.about-us-p{
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: black;
+    text-align: left;
+    margin-left: 5vw;
+    transition: transform 0.4s ease;    
+}
+.p2{
+    font-size: 2rem;
+    margin-left: 5vw;
+    transition: transform 0.4s ease; 
+}
+.p2:hover{
+    transform: scale(1.1);
+}
+.p3{
+    font-size: 5rem;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: transform 0.4s ease;
+}
+.p3:hover{
+    transform: scale(1.1);
+}
+.details-container{
+    width: 100%;
+    height: 10vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(224, 224, 224);
+}

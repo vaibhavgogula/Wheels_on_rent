@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+  if (!localStorage.getItem("user")) {
+    window.location.href = "signin.html";
+  }
+</script>
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+        <nav class="desktop-nav" >
+        <div class="logo">Wheels On Rent</div>
+        <div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+        </div>
+        <p id="welcomeUser" style="margin-right: 10px; color: white; font-weight: bold;"></p>
+<button class="btn" onclick="logout()">Logout</button>
+
+    </nav>
+     <!--contact-->
+    <section class="contact-section" id="Contact">
+        <div class="contact-container">
+            <h1 class="con-title">Contact</h1>
+            <form class="contact-form" action="#" method="POST">
+                <input class="in-text" type="text" name="name" placeholder="Your Name" required><br>
+                <input class="in-email" type="email" name="email" placeholder="Your Email" required><br>
+                <textarea class="in-message" name="message" rows="5" placeholder="Your Message" required></textarea><br>
+                <button class="in-button" type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="details-container">
+                <p class="detail-paragraph">© 2025 Wheels On Rent. All rights reserved.<br>
+Quality Cars and Bikes for Your Every Journey.</p>
+            </div> 
+    </section>
+    <script>
+  function logout() {
+    localStorage.removeItem("user");
+    window.location.href = "signin.html";
+  }
+
+  // Optional: Show welcome message
+  const user = localStorage.getItem("user");
+  if (user) {
+    document.getElementById("welcomeUser").textContent = "Welcome, " + user;
+  }
+</script>
+
+</body>
+</html>
