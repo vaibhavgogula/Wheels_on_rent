@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-  if (!localStorage.getItem("user")) {
-    window.location.href = "signin.html";
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "signin.html";
+    }
+  });
 </script>
+
 
     <link rel="stylesheet" href="aboutus.css">
 </head>
@@ -48,7 +51,7 @@ Quality Cars and Bikes for Your Every Journey.</p>
     </script>
     <script>
   function logout() {
-    localStorage.removeItem("user");
+    localStorage.removeItem("token");
     window.location.href = "signin.html";
   }
 

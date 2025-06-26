@@ -34,25 +34,25 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     })
   });
 
-  const msg = await res.text();
-  console.log("Login response:", msg); // ✅ Debug log
+  if (res.ok) {
+    const data = await res.json(); // Get token from response
+    console.log("Login successful:", data);
 
-  msgBox.textContent = msg;
+    localStorage.setItem("token", data.token); // ✅ Save token
 
-  if (msg.trim() === "Login successful!") {
+    msgBox.textContent = "Login successful!";
     msgBox.style.color = "green";
 
-    // ✅ Save login session
-    localStorage.setItem("user", form.username.value);
-
-    // 🔁 Redirect to home page
     setTimeout(() => {
       window.location.href = "index.html";
     }, 1000);
   } else {
+    const errorMsg = await res.text();
+    msgBox.textContent = errorMsg;
     msgBox.style.color = "red";
   }
 });
+
 
 // 📝 Signup Handler
 document.getElementById("signupForm").addEventListener("submit", async (e) => {

@@ -8,10 +8,13 @@
 
   <!-- 🔐 Redirect to signin if not logged in -->
   <script>
-    if (!localStorage.getItem("user")) {
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("token")) {
       window.location.href = "signin.html";
     }
-  </script>
+  });
+</script>
+
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mediaqueries.css">
@@ -102,7 +105,7 @@
   <script src="scripts.js"></script>
   <script>
     function logout() {
-      localStorage.removeItem("user");
+      localStorage.removeItem("token");
       window.location.href = "signin.html";
     }
 

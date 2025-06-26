@@ -4,29 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Booking Page</title>
-  <script>
-  if (!localStorage.getItem("user")) {
-    window.location.href = "signin.html";
-  }
-</script>
 
-  <link rel="stylesheet" href="booking.css">
+  <link rel="stylesheet" href="booking.css" />
 </head>
 <body>
-    <nav class="desktop-nav" >
-        <div class="logo">Wheels On Rent</div>
-        <div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="aboutus.html">About us</a></li>
-            </ul>
-        </div>
-        <p id="welcomeUser" style="margin-right: 10px; color: white; font-weight: bold;"></p>
-<button class="btn" onclick="logout()">Logout</button>
+  <nav class="desktop-nav">
+    <div class="logo">Wheels On Rent</div>
+    <div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+      </ul>
+    </div>
+    <p id="welcomeUser" style="margin-right: 10px; color: white; font-weight: bold;"></p>
+    <button class="btn" onclick="logout()">Logout</button>
+  </nav>
 
-    </nav>
   <div class="container">
     <h2>Book Your Ride</h2>
     <img id="vehiclePreview" src="" alt="Selected Vehicle" />
@@ -61,24 +56,34 @@
 
       <button class="book-btn" type="submit">Confirm Booking</button>
     </form>
+    <p id="bookingMessage" style="color: green; font-weight: bold;"></p>
   </div>
+
   <div class="details-container">
-                <p class="detail-paragraph">© 2025 Wheels On Rent. All rights reserved.<br>
-Quality Cars and Bikes for Your Every Journey.</p>
-            </div>
+    <p class="detail-paragraph">© 2025 Wheels On Rent. All rights reserved.<br>
+      Quality Cars and Bikes for Your Every Journey.
+    </p>
+  </div>
+
   <script src="booking.js"></script>
   <script>
-  function logout() {
-    localStorage.removeItem("user");
-    window.location.href = "signin.html";
-  }
+    // 🔒 Block access if no token
+    if (!localStorage.getItem("token")) {
+      <!-- window.location.href = "signin.html"; -->
+    }
 
-  // Optional: Show welcome message
-  const user = localStorage.getItem("user");
-  if (user) {
-    document.getElementById("welcomeUser").textContent = "Welcome, " + user;
-  }
-</script>
+    // 👋 Show user
+    const user = localStorage.getItem("user");
+    if (user) {
+      document.getElementById("welcomeUser").textContent = "Welcome, " + user;
+    }
 
+    // 🔓 Logout
+    function logout() {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      window.location.href = "signin.html";
+    }
+  </script>
 </body>
 </html>
